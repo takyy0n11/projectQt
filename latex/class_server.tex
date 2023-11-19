@@ -1,0 +1,343 @@
+\doxysection{Server Class Reference}
+\hypertarget{class_server}{}\label{class_server}\index{Server@{Server}}
+
+
+Класс \doxylink{class_server}{Server} представляет собой логику сервера.  
+
+
+
+
+{\ttfamily \#include $<$functions.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+QByte\+Array \mbox{\hyperlink{class_server_a81f9430cfb22afce0602e7d6f379268d}{generate\+Error\+Message}} ()
+\begin{DoxyCompactList}\small\item\em generate\+Error\+Message генерирует сообщение об ошибке. \end{DoxyCompactList}\item 
+QByte\+Array \mbox{\hyperlink{class_server_a7a51bdc07a883834d3872e56377f946c}{authenticate\+User}} (QString username, QString password)
+\begin{DoxyCompactList}\small\item\em authenticate\+User аутентифицирует пользователя. \end{DoxyCompactList}\item 
+QByte\+Array \mbox{\hyperlink{class_server_a81dab36510aa444d7a7fa25ba913cfc8}{register\+User}} (QString username, QString password, int user\+Type, QString teacher\+Username)
+\begin{DoxyCompactList}\small\item\em register\+User регистрирует нового пользователя. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_server_a1a960728462c75a4b2cca4aec3b3757c}{check\+Authentication}} (int user\+Key)
+\begin{DoxyCompactList}\small\item\em check\+Authentication проверяет, авторизировано ли устройство. \end{DoxyCompactList}\item 
+QByte\+Array \mbox{\hyperlink{class_server_a2d55dc82f39961493401bf1952ea94d2}{complete\+Task}} (int user\+Key, int task\+Number, int task\+Key, QString user\+Answer)
+\begin{DoxyCompactList}\small\item\em complete\+Task отдаёт задание на проверку и возвращает ответ. \end{DoxyCompactList}\item 
+QByte\+Array \mbox{\hyperlink{class_server_a2d06536e575cbbfd227505c2b2826d3b}{reset\+User\+Connections}} ()
+\begin{DoxyCompactList}\small\item\em reset\+User\+Connections сбрасывает подключения для зарегистрированных пользователей. \end{DoxyCompactList}\item 
+QByte\+Array \mbox{\hyperlink{class_server_a0efc292c663fb626ff71c4984dc990b3}{user\+Logout}} (QString username, QString password)
+\begin{DoxyCompactList}\small\item\em user\+Logout удаляет подключения для пользователя с данными логином и паролем. \end{DoxyCompactList}\item 
+QByte\+Array \mbox{\hyperlink{class_server_ad4339f3962a2b2b7d9670031d9fc3c78}{delete\+Group}} (int user\+Key)
+\begin{DoxyCompactList}\small\item\em delete\+Group удаляет группу заданного преподавателя. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_server_a8b8d065d4a60bf70112d74e5483bce03}{is\+Teacher}} (int user\+Key)
+\begin{DoxyCompactList}\small\item\em is\+Teacher проверяет, является ли пользователь преподавателем. \end{DoxyCompactList}\item 
+QByte\+Array \mbox{\hyperlink{class_server_ae485b8c2b45234d85f8dfb97553981fa}{get\+Students\+List}} (int user\+Key)
+\begin{DoxyCompactList}\small\item\em get\+Students\+List возвращает список студентов преподавателя. \end{DoxyCompactList}\item 
+QByte\+Array \mbox{\hyperlink{class_server_a4842845772076863deae8795e6715b61}{get\+Task}} (int task\+Number)
+\begin{DoxyCompactList}\small\item\em get\+Task генерирует задание и передает клиенту условие задания и его уникальный номер. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_server_abb9a639fd7fdcf2c0c170936b01f5b57}{check\+Task}} (int task\+Number, int task\+Key, QString user\+Answer)
+\begin{DoxyCompactList}\small\item\em check\+Task проверяет задание. \end{DoxyCompactList}\item 
+QByte\+Array \mbox{\hyperlink{class_server_a70949a419b7d96e2992eb65a7e9b3634}{get\+Statistics}} (int user\+Key, QString student\+Username, int task\+Number)
+\begin{DoxyCompactList}\small\item\em get\+Statistics возвращает статистику по заданию ученика. \end{DoxyCompactList}\item 
+QByte\+Array \mbox{\hyperlink{class_server_acfe6a3be100bfe5b22db42bc5a5aabaa}{parse\+User\+Message}} (QString message)
+\begin{DoxyCompactList}\small\item\em parse\+User\+Message принимает сообщение пользователя и возвращает ответ подходящей функции. \end{DoxyCompactList}\item 
+\Hypertarget{class_server_a699c514670d017c70ba5e0ca0057add8}\label{class_server_a699c514670d017c70ba5e0ca0057add8} 
+bool {\bfseries check\+Task1} (int task\+Key, QString user\+Answer)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_server}{Server}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_server_a22dbfd5db73d391d615a0bfd69077fb6}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em get\+Instance возвращает экземпляр синглтона \doxylink{class_server}{Server}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс \doxylink{class_server}{Server} представляет собой логику сервера. 
+
+Этот класс обеспечивает авторизацию, регистрацию, отправку заданий, проверку заданий, управление подключениями и другие функции, связанные с обработкой запросов от клиентов. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_server_a7a51bdc07a883834d3872e56377f946c}\label{class_server_a7a51bdc07a883834d3872e56377f946c} 
+\index{Server@{Server}!authenticateUser@{authenticateUser}}
+\index{authenticateUser@{authenticateUser}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{authenticateUser()}{authenticateUser()}}
+{\footnotesize\ttfamily QByte\+Array Server\+::authenticate\+User (\begin{DoxyParamCaption}\item[{QString}]{username,  }\item[{QString}]{password }\end{DoxyParamCaption})}
+
+
+
+authenticate\+User аутентифицирует пользователя. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Логин пользователя. \\
+\hline
+{\em password} & Пароль пользователя. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+QByte\+Array с ответом сервера. 
+\end{DoxyReturn}
+\Hypertarget{class_server_a1a960728462c75a4b2cca4aec3b3757c}\label{class_server_a1a960728462c75a4b2cca4aec3b3757c} 
+\index{Server@{Server}!checkAuthentication@{checkAuthentication}}
+\index{checkAuthentication@{checkAuthentication}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{checkAuthentication()}{checkAuthentication()}}
+{\footnotesize\ttfamily bool Server\+::check\+Authentication (\begin{DoxyParamCaption}\item[{int}]{user\+Key }\end{DoxyParamCaption})}
+
+
+
+check\+Authentication проверяет, авторизировано ли устройство. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Key} & Уникальный ключ пользователя. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, если устройство авторизовано, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{class_server_abb9a639fd7fdcf2c0c170936b01f5b57}\label{class_server_abb9a639fd7fdcf2c0c170936b01f5b57} 
+\index{Server@{Server}!checkTask@{checkTask}}
+\index{checkTask@{checkTask}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{checkTask()}{checkTask()}}
+{\footnotesize\ttfamily bool Server\+::check\+Task (\begin{DoxyParamCaption}\item[{int}]{task\+Number,  }\item[{int}]{task\+Key,  }\item[{QString}]{user\+Answer }\end{DoxyParamCaption})}
+
+
+
+check\+Task проверяет задание. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task\+Number} & Номер задания. \\
+\hline
+{\em task\+Key} & Уникальный ключ задания. \\
+\hline
+{\em user\+Answer} & Ответ пользователя. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, если задание выполнено верно, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{class_server_a2d55dc82f39961493401bf1952ea94d2}\label{class_server_a2d55dc82f39961493401bf1952ea94d2} 
+\index{Server@{Server}!completeTask@{completeTask}}
+\index{completeTask@{completeTask}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{completeTask()}{completeTask()}}
+{\footnotesize\ttfamily QByte\+Array Server\+::complete\+Task (\begin{DoxyParamCaption}\item[{int}]{user\+Key,  }\item[{int}]{task\+Number,  }\item[{int}]{task\+Key,  }\item[{QString}]{user\+Answer }\end{DoxyParamCaption})}
+
+
+
+complete\+Task отдаёт задание на проверку и возвращает ответ. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Key} & Уникальный ключ пользователя. \\
+\hline
+{\em task\+Number} & Номер задания. \\
+\hline
+{\em task\+Key} & Уникальный ключ задания. \\
+\hline
+{\em user\+Answer} & Ответ пользователя. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+QByte\+Array с ответом сервера. 
+\end{DoxyReturn}
+\Hypertarget{class_server_ad4339f3962a2b2b7d9670031d9fc3c78}\label{class_server_ad4339f3962a2b2b7d9670031d9fc3c78} 
+\index{Server@{Server}!deleteGroup@{deleteGroup}}
+\index{deleteGroup@{deleteGroup}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{deleteGroup()}{deleteGroup()}}
+{\footnotesize\ttfamily QByte\+Array Server\+::delete\+Group (\begin{DoxyParamCaption}\item[{int}]{user\+Key }\end{DoxyParamCaption})}
+
+
+
+delete\+Group удаляет группу заданного преподавателя. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Key} & Уникальный ключ пользователя (преподавателя). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+QByte\+Array с ответом сервера. 
+\end{DoxyReturn}
+\Hypertarget{class_server_a81f9430cfb22afce0602e7d6f379268d}\label{class_server_a81f9430cfb22afce0602e7d6f379268d} 
+\index{Server@{Server}!generateErrorMessage@{generateErrorMessage}}
+\index{generateErrorMessage@{generateErrorMessage}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{generateErrorMessage()}{generateErrorMessage()}}
+{\footnotesize\ttfamily QByte\+Array Server\+::generate\+Error\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+generate\+Error\+Message генерирует сообщение об ошибке. 
+
+\begin{DoxyReturn}{Returns}
+QByte\+Array с ответом сервера. 
+\end{DoxyReturn}
+\Hypertarget{class_server_a22dbfd5db73d391d615a0bfd69077fb6}\label{class_server_a22dbfd5db73d391d615a0bfd69077fb6} 
+\index{Server@{Server}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_server}{Server}} \texorpdfstring{$\ast$}{*} Server\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+get\+Instance возвращает экземпляр синглтона \doxylink{class_server}{Server}. 
+
+\begin{DoxyReturn}{Returns}
+Указатель на экземпляр \doxylink{class_server}{Server}. 
+\end{DoxyReturn}
+\Hypertarget{class_server_a70949a419b7d96e2992eb65a7e9b3634}\label{class_server_a70949a419b7d96e2992eb65a7e9b3634} 
+\index{Server@{Server}!getStatistics@{getStatistics}}
+\index{getStatistics@{getStatistics}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{getStatistics()}{getStatistics()}}
+{\footnotesize\ttfamily QByte\+Array Server\+::get\+Statistics (\begin{DoxyParamCaption}\item[{int}]{user\+Key,  }\item[{QString}]{student\+Username,  }\item[{int}]{task\+Number }\end{DoxyParamCaption})}
+
+
+
+get\+Statistics возвращает статистику по заданию ученика. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Key} & Уникальный ключ пользователя (преподавателя). \\
+\hline
+{\em student\+Username} & Логин ученика. \\
+\hline
+{\em task\+Number} & Номер задания. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+QByte\+Array с ответом сервера. 
+\end{DoxyReturn}
+\Hypertarget{class_server_ae485b8c2b45234d85f8dfb97553981fa}\label{class_server_ae485b8c2b45234d85f8dfb97553981fa} 
+\index{Server@{Server}!getStudentsList@{getStudentsList}}
+\index{getStudentsList@{getStudentsList}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{getStudentsList()}{getStudentsList()}}
+{\footnotesize\ttfamily QByte\+Array Server\+::get\+Students\+List (\begin{DoxyParamCaption}\item[{int}]{user\+Key }\end{DoxyParamCaption})}
+
+
+
+get\+Students\+List возвращает список студентов преподавателя. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Key} & Уникальный ключ пользователя (преподавателя). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+QByte\+Array с ответом сервера. 
+\end{DoxyReturn}
+\Hypertarget{class_server_a4842845772076863deae8795e6715b61}\label{class_server_a4842845772076863deae8795e6715b61} 
+\index{Server@{Server}!getTask@{getTask}}
+\index{getTask@{getTask}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{getTask()}{getTask()}}
+{\footnotesize\ttfamily QByte\+Array Server\+::get\+Task (\begin{DoxyParamCaption}\item[{int}]{task\+Number }\end{DoxyParamCaption})}
+
+
+
+get\+Task генерирует задание и передает клиенту условие задания и его уникальный номер. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task\+Number} & Номер задания. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+QByte\+Array с ответом сервера. 
+\end{DoxyReturn}
+\Hypertarget{class_server_a8b8d065d4a60bf70112d74e5483bce03}\label{class_server_a8b8d065d4a60bf70112d74e5483bce03} 
+\index{Server@{Server}!isTeacher@{isTeacher}}
+\index{isTeacher@{isTeacher}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{isTeacher()}{isTeacher()}}
+{\footnotesize\ttfamily bool Server\+::is\+Teacher (\begin{DoxyParamCaption}\item[{int}]{user\+Key }\end{DoxyParamCaption})}
+
+
+
+is\+Teacher проверяет, является ли пользователь преподавателем. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Key} & Уникальный ключ пользователя. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, если пользователь -\/ преподаватель, false в противном случае. 
+\end{DoxyReturn}
+\Hypertarget{class_server_acfe6a3be100bfe5b22db42bc5a5aabaa}\label{class_server_acfe6a3be100bfe5b22db42bc5a5aabaa} 
+\index{Server@{Server}!parseUserMessage@{parseUserMessage}}
+\index{parseUserMessage@{parseUserMessage}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{parseUserMessage()}{parseUserMessage()}}
+{\footnotesize\ttfamily QByte\+Array Server\+::parse\+User\+Message (\begin{DoxyParamCaption}\item[{QString}]{message }\end{DoxyParamCaption})}
+
+
+
+parse\+User\+Message принимает сообщение пользователя и возвращает ответ подходящей функции. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Сообщение пользователя. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+QByte\+Array с ответом сервера. 
+\end{DoxyReturn}
+\Hypertarget{class_server_a81dab36510aa444d7a7fa25ba913cfc8}\label{class_server_a81dab36510aa444d7a7fa25ba913cfc8} 
+\index{Server@{Server}!registerUser@{registerUser}}
+\index{registerUser@{registerUser}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{registerUser()}{registerUser()}}
+{\footnotesize\ttfamily QByte\+Array Server\+::register\+User (\begin{DoxyParamCaption}\item[{QString}]{username,  }\item[{QString}]{password,  }\item[{int}]{user\+Type,  }\item[{QString}]{teacher\+Username }\end{DoxyParamCaption})}
+
+
+
+register\+User регистрирует нового пользователя. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Логин пользователя. \\
+\hline
+{\em password} & Пароль пользователя. \\
+\hline
+{\em user\+Type} & Тип пользователя. \\
+\hline
+{\em teacher\+Username} & Логин преподавателя (если применимо). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+QByte\+Array с ответом сервера. 
+\end{DoxyReturn}
+\Hypertarget{class_server_a2d06536e575cbbfd227505c2b2826d3b}\label{class_server_a2d06536e575cbbfd227505c2b2826d3b} 
+\index{Server@{Server}!resetUserConnections@{resetUserConnections}}
+\index{resetUserConnections@{resetUserConnections}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{resetUserConnections()}{resetUserConnections()}}
+{\footnotesize\ttfamily QByte\+Array Server\+::reset\+User\+Connections (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+reset\+User\+Connections сбрасывает подключения для зарегистрированных пользователей. 
+
+\begin{DoxyReturn}{Returns}
+QByte\+Array с ответом сервера. 
+\end{DoxyReturn}
+\Hypertarget{class_server_a0efc292c663fb626ff71c4984dc990b3}\label{class_server_a0efc292c663fb626ff71c4984dc990b3} 
+\index{Server@{Server}!userLogout@{userLogout}}
+\index{userLogout@{userLogout}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{userLogout()}{userLogout()}}
+{\footnotesize\ttfamily QByte\+Array Server\+::user\+Logout (\begin{DoxyParamCaption}\item[{QString}]{username,  }\item[{QString}]{password }\end{DoxyParamCaption})}
+
+
+
+user\+Logout удаляет подключения для пользователя с данными логином и паролем. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Логин пользователя. \\
+\hline
+{\em password} & Пароль пользователя. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+QByte\+Array с ответом сервера. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+functions.\+h\item 
+functions.\+cpp\end{DoxyCompactItemize}

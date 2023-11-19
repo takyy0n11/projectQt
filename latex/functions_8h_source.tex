@@ -1,0 +1,60 @@
+\doxysection{functions.\+h}
+\hypertarget{functions_8h_source}{}\label{functions_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SERVER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SERVER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QByteArray>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_server}{Server}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_server}{Server}}();}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_server}{Server}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_server}{Server}}\&\ );}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_server}{Server}}\&\ operator\ =\ (\mbox{\hyperlink{class_server}{Server}}\ \&);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{class_server}{Server}}\ *p\_instance\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ QByteArray\ \mbox{\hyperlink{class_server_a81f9430cfb22afce0602e7d6f379268d}{generateErrorMessage}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00035\ \ \ \ \ QByteArray\ \mbox{\hyperlink{class_server_a7a51bdc07a883834d3872e56377f946c}{authenticateUser}}(QString\ username,\ QString\ password);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00045\ \ \ \ \ QByteArray\ \mbox{\hyperlink{class_server_a81dab36510aa444d7a7fa25ba913cfc8}{registerUser}}(QString\ username,\ QString\ password,\ \textcolor{keywordtype}{int}\ userType,\ QString\ teacherUsername);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_server_a1a960728462c75a4b2cca4aec3b3757c}{checkAuthentication}}(\textcolor{keywordtype}{int}\ userKey);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00062\ \ \ \ \ QByteArray\ \mbox{\hyperlink{class_server_a2d55dc82f39961493401bf1952ea94d2}{completeTask}}(\textcolor{keywordtype}{int}\ userKey,\ \textcolor{keywordtype}{int}\ taskNumber,\ \textcolor{keywordtype}{int}\ taskKey,\ QString\ userAnswer);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00068\ \ \ \ \ QByteArray\ \mbox{\hyperlink{class_server_a2d06536e575cbbfd227505c2b2826d3b}{resetUserConnections}}();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00076\ \ \ \ \ QByteArray\ \mbox{\hyperlink{class_server_a0efc292c663fb626ff71c4984dc990b3}{userLogout}}(QString\ username,\ QString\ password);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00083\ \ \ \ \ QByteArray\ \mbox{\hyperlink{class_server_ad4339f3962a2b2b7d9670031d9fc3c78}{deleteGroup}}(\textcolor{keywordtype}{int}\ userKey);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_server_a8b8d065d4a60bf70112d74e5483bce03}{isTeacher}}(\textcolor{keywordtype}{int}\ userKey);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00097\ \ \ \ \ QByteArray\ \mbox{\hyperlink{class_server_ae485b8c2b45234d85f8dfb97553981fa}{getStudentsList}}(\textcolor{keywordtype}{int}\ userKey);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00104\ \ \ \ \ QByteArray\ \mbox{\hyperlink{class_server_a4842845772076863deae8795e6715b61}{getTask}}(\textcolor{keywordtype}{int}\ taskNumber);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_server_abb9a639fd7fdcf2c0c170936b01f5b57}{checkTask}}(\textcolor{keywordtype}{int}\ taskNumber,\ \textcolor{keywordtype}{int}\ taskKey,\ QString\ userAnswer);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00122\ \ \ \ \ QByteArray\ \mbox{\hyperlink{class_server_a70949a419b7d96e2992eb65a7e9b3634}{getStatistics}}(\textcolor{keywordtype}{int}\ userKey,\ QString\ studentUsername,\ \textcolor{keywordtype}{int}\ taskNumber);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00129\ \ \ \ \ QByteArray\ \mbox{\hyperlink{class_server_acfe6a3be100bfe5b22db42bc5a5aabaa}{parseUserMessage}}(QString\ message);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00137\ \ \ \ \ QString\ generateTask(\textcolor{keywordtype}{int}\ taskNumber);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00144\ \ \ \ \ QString\ generateTask1(\textcolor{keywordtype}{int}\ taskKey);}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_server}{Server}}*\ \mbox{\hyperlink{class_server_a22dbfd5db73d391d615a0bfd69077fb6}{getInstance}}();}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{bool}\ checkTask1(\textcolor{keywordtype}{int}\ taskKey,\ QString\ userAnswer);}
+\DoxyCodeLine{00153\ \};}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SERVER\_H}}
+
+\end{DoxyCode}

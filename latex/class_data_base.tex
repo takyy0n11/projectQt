@@ -1,0 +1,69 @@
+\doxysection{Data\+Base Class Reference}
+\hypertarget{class_data_base}{}\label{class_data_base}\index{DataBase@{DataBase}}
+
+
+Класс \doxylink{class_data_base}{Data\+Base} реализует взаимодействие с базой данных.  
+
+
+
+
+{\ttfamily \#include $<$database.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+QVector$<$ QMap$<$ QString, QString $>$ $>$ \mbox{\hyperlink{class_data_base_a2b599d28d41c1459aa4b72c38802900f}{db\+Request}} (QString request)
+\begin{DoxyCompactList}\small\item\em db\+\_\+request отправляет запрос в базу данных. \end{DoxyCompactList}\item 
+\Hypertarget{class_data_base_a5cc912a4221e2d406844823102aa1f61}\label{class_data_base_a5cc912a4221e2d406844823102aa1f61} 
+void {\bfseries db\+Clear} ()
+\begin{DoxyCompactList}\small\item\em db\+\_\+clear очищает базу данных. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_data_base}{Data\+Base}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_data_base_ac197c113a2461eb1f6760dadecd2d2b7}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em get\+Instance возвращает экземпляр синглтона \doxylink{class_data_base}{Data\+Base}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс \doxylink{class_data_base}{Data\+Base} реализует взаимодействие с базой данных. 
+
+Этот класс обеспечивает выполнение запросов к базе данных, очистку базы и вывод таблицы в консоль. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_data_base_a2b599d28d41c1459aa4b72c38802900f}\label{class_data_base_a2b599d28d41c1459aa4b72c38802900f} 
+\index{DataBase@{DataBase}!dbRequest@{dbRequest}}
+\index{dbRequest@{dbRequest}!DataBase@{DataBase}}
+\doxysubsubsection{\texorpdfstring{dbRequest()}{dbRequest()}}
+{\footnotesize\ttfamily QVector$<$ QMap$<$ QString, QString $>$ $>$ Data\+Base\+::db\+Request (\begin{DoxyParamCaption}\item[{QString}]{request }\end{DoxyParamCaption})}
+
+
+
+db\+\_\+request отправляет запрос в базу данных. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & SQL-\/запрос. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+QVector$<$\+QMap$<$\+QString, QString$>$$>$ с результатом запроса. 
+\end{DoxyReturn}
+\Hypertarget{class_data_base_ac197c113a2461eb1f6760dadecd2d2b7}\label{class_data_base_ac197c113a2461eb1f6760dadecd2d2b7} 
+\index{DataBase@{DataBase}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!DataBase@{DataBase}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_data_base}{Data\+Base}} \texorpdfstring{$\ast$}{*} Data\+Base\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+get\+Instance возвращает экземпляр синглтона \doxylink{class_data_base}{Data\+Base}. 
+
+\begin{DoxyReturn}{Returns}
+Указатель на экземпляр \doxylink{class_data_base}{Data\+Base}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+database.\+h\item 
+database.\+cpp\end{DoxyCompactItemize}
