@@ -15,39 +15,6 @@ bool DataBase::dbCreated()
 void DataBase::createDb()
 {
     QSqlQuery query(this->db);
-    /* Создаёт две таблицы:
-     *
-     * Users
-     * --------------------------------
-     * username | password | type | key
-     * --------------------------------
-     *       |          |      |
-     *       |          |      |
-     *       |          |      |
-     * --------------------------------
-     *
-     * type: 0 - студент, 1 - преподаватель
-     *
-     * Tasks
-     * ------------------------------------------------------
-     * task_id | username | task_number | answer | is_correct
-     * ------------------------------------------------------
-     *         |          |             |        |
-     *         |          |             |        |
-     *         |          |             |        |
-     * ------------------------------------------------------
-     * Tasks.login <-> Users.login
-     *
-     * UserGroups
-     * ------------------------------
-     * teacher_login | student_login
-     * ------------------------------
-     *               |
-     *               |
-     *               |
-     * ------------------------------
-     *
-     */
     query.exec("CREATE TABLE Users("
                "username VARCHAR(64) PRIMARY KEY, "
                "password VARCHAR(64) NOT NULL, "
